@@ -3,11 +3,10 @@ function greet() {
     console.log(`my name is ${this.name}, hi!`);
 }
  
-greet(); // my name is , hi!
+let sally = { name: 'Sally' };
  
-let person = {
-    name: 'Bob',
-    greet: greet
-};
+greet.call(sally);
+// my name is Sally, hi!
  
-person.greet(); // my name is Bob, hi!
+greet.apply(sally);
+// my name is Sally, hi!
